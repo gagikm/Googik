@@ -30,6 +30,8 @@ function f(id){
     switch(val.toLowerCase()) {
     case "linkedin":
     case "|linkedin":
+            window.location.href = 'http://linkedin.com/in/gagikm';
+            break;
     case "resume":  
     case "|resume":  
         document.getElementById("search").value = "Press Enter to Download Resume [ PDF ]";
