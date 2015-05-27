@@ -346,6 +346,7 @@ var BetterAutocomplete = function($input, resource, options, callbacks) {
    * @param {Boolean} [autoScroll]
    *   (default=false) If scrolling of the results list should be automated.
    */
+    autoScroll = true;
   var setHighlighted = function(index, trigger, autoScroll) {
     //console.log('Index: '+index)
     var prevIndex = getHighlightedIndex(),

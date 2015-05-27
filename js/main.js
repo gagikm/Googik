@@ -1,3 +1,4 @@
+
 var val = document.getElementById("search").value;
 
 
@@ -19,10 +20,13 @@ keyboardEvent[initMethod](
                     0 // charCodeArgs : unsigned long the Unicode character associated with the depressed key, else 0
 );
     
-         document.getElementById("search").focus();
+//         document.getElementById("search").focus();
         document.getElementById("search").value = "|";
 //        document.dispatchEvent(keyboardEvent);
+//    if(window.length>500)
          document.getElementById("search").click();
+             document.getElementById("search").focus();
+
 
 }
 function f(id){
@@ -37,7 +41,7 @@ function f(id){
         document.getElementById("search").value = "Press Enter to Download Resume [ PDF ]";
         break;
     case "press enter to download resume [ pdf ]":
-        window.location.href = 'https://www.dropbox.com/s/kj5yd3flvmedm65/Gagik%20Movsisyan-%20Resume-1.pdf';
+        window.location.href = 'https://www.dropbox.com/s/jdyfqbb2v1wgz2t/updatedResume.pdf?dl=0';
         break;
     case "facebook":
     case "|facebook":
@@ -55,12 +59,12 @@ function f(id){
         break;
     case "birthday":
     case "|birthday":
-        document.getElementsByTagName("body")[0].style = "background-image:url('http://hdwallpaper.freehdw.com/0007/3d-abstract_hdwallpaper_flower-field_62438.jpg'); background-fit:contain";
+        document.getElementsByTagName("body")[0].style = "background-image:url('img/birthday.png'); background-fit:contain";
         document.getElementById("search").value = "May 25";
         break;
     case "education": case "school": case "university": case "college": case "ucla":
     case "|education": case "|school": case "|university": case "|college": case "|ucla":
-        document.getElementsByTagName("body")[0].style = "background-image:url('https://c1.staticflickr.com/9/8092/8390742042_c2788e2f44_b.jpg'); background-size:100%";
+        document.getElementsByTagName("body")[0].style = "background-image:url('img/ucla.png'); background-size:100%";
         document.getElementById("search").value = "University of California, Los Angeles";
         break;
     case "university of california, los angeles":
@@ -103,6 +107,7 @@ function f(id){
 } 
 
 }
+
 document.getElementById("gagiksearch").onclick = function() {
             val = document.getElementById("search").value;
             f(val);
@@ -118,5 +123,3 @@ function searchKeyPress(e)
             f("gagiksearch");
         }
     }
-
-
