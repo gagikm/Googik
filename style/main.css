@@ -38,6 +38,7 @@ body
     width:500px;
     margin:0 auto;
 }
+@font-face { font-family: Catull; src: url('../catull-regular.ttf'); } 
 
 
 

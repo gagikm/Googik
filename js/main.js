@@ -35,10 +35,6 @@ keyboardEvent[initMethod](
 function f(id){
     var val = document.getElementById("search").value;
     switch(val.toLowerCase()) {
-    case "yougle":
-    case "|yougle":
-            window.location.href='yougle.html';
-            break;
     case "linkedin":
     case "|linkedin":
             window.location.href = 'http://linkedin.com/in/gagikm';
