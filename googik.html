@@ -2,11 +2,11 @@
 <html>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-<!--
+
 <link rel="icon" 
       type="image/png" 
-      href="img/favicon.png">         
--->
+      href="img/favicon.ico">         
+
         <title>gagikm</title>
     <link href="./style/main.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="./Better-Autocomplete-develop/src/better-autocomplete.css" />
@@ -22,7 +22,7 @@
         </div>
         
         <div id="searchbar" align="center" style="padding-top: 20px;">
-            <input onkeypress="searchKeyPress(event);" id="search" type="search" name="search" style="margin:0 auto; width:480px; height:28px">
+            <input onkeypress="searchKeyPress(event);" id="search" type="text" name="search" style="margin:0 auto; width:480px; height:2.5em">
         </div>
         
         <div id="buttons" align="center" style="padding-top: 20px;">
@@ -68,10 +68,35 @@ window.mobilecheck = function() {
   return check;
 }
 var is_mobile = window.mobilecheck();
-$(window).trigger("resize");
-$(window).resize(function() {
-      window.location.href = window.location.href;
+
+
+
+
     var wi = $(window).width();
+
+    window.onorientationchange = function() { 
+        var orientation = window.orientation; 
+            switch(orientation) { 
+                case 0: 
+                // document.getElementById("spaceAboveLogo").style.padding = "100px 0 0 0";
+                window.location.reload(); 
+                break; 
+                case 90: 
+                // document.getElementById("spaceAboveLogo").style.padding = "0 0 0 0";
+                window.location.reload(); 
+                break; 
+                case -90: 
+                // document.getElementById("spaceAboveLogo").style.padding = "0 0 0 0";
+                window.location.reload(); 
+                break; } 
+    };
+
+
+$(window).resize(function() {
+
+    if(!is_mobile)
+      window.location.href = window.location.href;
+
          if ((wi < 500 && wi > 400)) {
           document.body.style.width="400px";
           document.getElementById("logo").style.width='240px';
@@ -100,6 +125,7 @@ $(window).resize(function() {
           document.getElementById("spaceAboveLogo").style.padding = "100px 0 0 0";
         }
     else {
+          window.width="500px";
           document.body.style.width="500px";
           document.getElementById("logo").style.width="228px";                    
           document.getElementById("search").style.width='495px';
@@ -109,6 +135,7 @@ $(window).resize(function() {
 
 });
 $(document).ready(function(){
+
     var wi = $(window).width();
         // alert(wi);         
         if ((wi < 500 && wi > 400)) {
@@ -141,12 +168,18 @@ $(document).ready(function(){
 
 
     else {          
+          window.width="500px";
           document.body.style.width="500px";
           document.getElementById("logo").style.width="228px";                    
           document.getElementById("search").style.width='100%';
           document.getElementById("spaceAboveLogo").style="padding-top:180px";
 
         }
+
+          if(is_mobile && window.orientation != 0)
+              document.getElementById("spaceAboveLogo").style.padding="40px 0 0 0";
+
+
   // Local source, string array. Simplest setup possible
   $('#dd').betterAutocomplete('init', suggestions, {}, {});
 
