@@ -40,6 +40,15 @@ body
 }
 @font-face { font-family: Catull; src: url('../catull-regular.ttf'); } 
 
+#footer
+{
+    width:inherit;
+    position:absolute; 
+    bottom:0;
+    text-align: middle;
+    z-index: -1;
+}
+
 
 
 
